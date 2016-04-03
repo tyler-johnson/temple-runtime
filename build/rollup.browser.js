@@ -3,12 +3,12 @@ import commonjs from "rollup-plugin-commonjs";
 import resolve from "rollup-plugin-node-resolve";
 import json from "rollup-plugin-json";
 import builtins from "rollup-plugin-node-builtins";
-import nodeGlobals from "rollup-plugin-node-globals";
+import replace from "rollup-plugin-replace";
 
 export default {
 	onwarn: ()=>{},
 	format: "umd",
-	moduleName: "templejs_runtime",
+	moduleName: "Temple",
 	plugins: [
 		builtins(),
 
@@ -31,9 +31,14 @@ export default {
 			exclude: [ "node_modules/**" ],
 			include: [ "src/**" ],
 			presets: [ "es2015-rollup" ],
-			plugins: [ "transform-object-rest-spread" ]
+			plugins: [
+				"transform-object-rest-spread",
+				"lodash"
+			]
 		}),
 
-		nodeGlobals()
+		replace({
+			"process.env.NODE_ENV": JSON.stringify("production")
+		})
 	]
 };

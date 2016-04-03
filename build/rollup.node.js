@@ -1,10 +1,12 @@
 import babel from "rollup-plugin-babel";
 import json from "rollup-plugin-json";
+import resolve from "./resolve";
 
 export default {
 	onwarn: ()=>{},
 	format: "cjs",
 	plugins: [
+		resolve(),
 		json(),
 		babel({
 			exclude: [ "node_modules/**" ],
