@@ -2,15 +2,10 @@ BIN = ./node_modules/.bin
 SRC = $(wildcard src/* src/*/*)
 TEST = $(wildcard test/* test/*/*)
 
-build: index.js cli.js dist/browser.min.js
+build: index.js dist/browser.min.js
 
 index.js: src/index.js $(SRC)
 	$(BIN)/rollup $< -c build/rollup.node.js > $@
-
-cli.js: src/cli.js $(SRC)
-	echo "#!/usr/bin/env node" > $@
-	$(BIN)/rollup $< -c build/rollup.node.js >> $@
-	chmod +x $@
 
 dist:
 	mkdir -p $@
@@ -33,6 +28,6 @@ test-full: test.js
 	$(BIN)/browserify $< -r ./dist/browser.js:templejs-runtime --debug | $(BIN)/tape-run
 
 clean:
-	rm -rf index.js test.js cli.js dist/
+	rm -rf index.js test.js dist/
 
 .PHONY: build clean test test-cjs test-full

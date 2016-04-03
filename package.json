@@ -7,7 +7,6 @@
     "url": "https://github.com/tyler-johnson/temple-runtime.git"
   },
   "main": "index.js",
-  "bin": "cli.js",
   "scripts": {
     "lint": "eslint src/ test/",
     "build": "make clean && make",
@@ -21,7 +20,6 @@
     "dom-matches": "^2.0.0",
     "incremental-dom": "^0.3.0",
     "lodash": "^4.7.0",
-    "minimist": "^1.2.0",
     "raf": "^3.2.0",
     "trackr": "^2.0.2",
     "trackr-objects": "^0.4.0"
