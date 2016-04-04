@@ -7,6 +7,8 @@
     "url": "https://github.com/tyler-johnson/temple-runtime.git"
   },
   "main": "index.js",
+  "browser": "browser.js",
+  "jsnext:main": "es6.js",
   "scripts": {
     "lint": "eslint src/ test/",
     "build": "make clean && make",
@@ -50,5 +52,11 @@
     "uglify-js": "^2.6.2"
   },
   "keywords": [],
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "es6.js",
+    "browser.js",
+    "dist"
+  ]
 }
