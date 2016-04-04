@@ -1,6 +1,7 @@
 node_modules/
 /index.js
+/browser.js
+/es6.js
 /test.js
 /cli.js
 dist/
-
