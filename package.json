@@ -1,5 +1,6 @@
 {
   "name": "templejs-runtime",
+  "version": "0.0.0-edge",
   "description": "Core library that powers Temple in the browser.",
   "author": "Tyler Johnson <tyler@tylerjohnson.me>",
   "repository": {
